@@ -52,3 +52,21 @@ ggplot(mtcars) +
   geom_point(aes(disp, mpg))
 
 # Exercício8 -Usando o exemplo anterior, explore outros tipos de gráficos
+library(ggplot2)
+ggplot(mtcars, aes(x = disp, y = mpg)) +
+  geom_point(shape = 1) +
+  geom_smooth(method = lm, color = "red", se = TRUE)
+  #se to display confidence interval around smooth
+
+?mtcars
+head(mtcars)
+ggplot(mtcars, aes(x = disp, y = mpg, colour = as.factor(am))) + geom_point()
+
+ggplot(mtcars, aes(x = as.factor(cyl), y = mpg, colour = as.factor(cyl))) + geom_boxplot()
+
+ggplot(mtcars, aes(x = mpg), binwidth = 30) + geom_histogram(colour = "blue", fill = "yellow")
+
+ggplot(mtcars, aes(x = as.factor(cyl), fill = as.factor(cyl))) + geom_bar() + xlab("Cilindros") + ylab("Frequência") + ylim(c(0,15)) + labs(fill = "Cilindros") + theme(legend.position = "top")
+
+ggplot(mtcars, aes(x = as.factor(cyl), fill = as.factor(cyl))) + geom_bar() + xlab("Cilindros") + ylab("Frequência") + ylim(c(0,15)) + labs(fill = "Cilindros") + theme(legend.position = "bottom") + facet_grid(.~am)
+       
