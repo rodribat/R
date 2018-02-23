@@ -48,3 +48,4 @@ ggplot(open_adts2) +
 ggplot(open_adts2) + 
   geom_bar(aes(x=ANO_MES, weight=CV115_Abertas)) +
   labs(title = "Auditorias Abertas de Convênio 115", x = "Período", y = "Quantidade")
+
